@@ -5,9 +5,15 @@
 # Hint: use sha256sum with -c to check if an input matches a hash.
 
 #!/bin/bash
-read -p "type a secret password" pass_var
+read -sp "type a secret password"
 echo secret password | sha256sum
 
-
+if [ "sha256sum -c <secret.txt>" ]; then
+    echo "Access Granted"
+    echo $?
+else 
+    echo "Access Denied"
+    echo $?
+fi
 
 
