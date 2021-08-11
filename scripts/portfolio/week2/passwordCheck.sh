@@ -4,6 +4,7 @@
 # If the user’s password is incorrect print “Access Denied” and quit with the exit code 1.
 # Hint: use sha256sum with -c to check if an input matches a hash.
 
+
 #!/bin/bash
 read -sp "type a secret password"
 echo secret password | sha256sum
@@ -15,5 +16,6 @@ else
     echo "Access Denied"
     echo $?
 fi
+
 
 
